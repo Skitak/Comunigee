@@ -15,7 +15,4 @@ class SiteController extends Controller
 		return $this->render('SiteBundle:vues:nourriture.html.twig');
 	}
 
-	public function foyerAction(){
-		return $this->render('SiteBundle:vues:foyer.html.twig');
-	}
 }
