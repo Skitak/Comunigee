@@ -8,7 +8,7 @@ class SiteController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('SiteBundle:Site:index.html.twig');
+        return $this->render('SiteBundle:vues:index.html.twig');
     }
 	
 	public function nourritureAction(){
