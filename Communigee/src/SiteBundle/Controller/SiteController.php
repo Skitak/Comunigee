@@ -8,7 +8,7 @@ class SiteController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('SiteBundle:Site:index.html.twig');
+        return $this->render('SiteBundle:vues:index.html.twig');
     }
 	
 	public function nourritureAction(){
@@ -18,4 +18,13 @@ class SiteController extends Controller
 	public function foyerAction(){
 		return $this->render('SiteBundle:vues:foyer.html.twig');
 	}
+	
+	public function justiceAction(){
+		return $this->render('SiteBundle:vues:justice.html.twig');
+	}
+	
+	public function alertesAction(){
+		return $this->render('SiteBundle:vues:alertes.html.twig');
+	}
+	
 }
