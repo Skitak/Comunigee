@@ -10,4 +10,9 @@ class SiteController extends Controller
     {
         return $this->render('SiteBundle:Site:index.html.twig');
     }
+	
+	public function nourritureAction(){
+		return $this->render('SiteBundle:vues:nourriture.html.twig');
+	}
+
 }
