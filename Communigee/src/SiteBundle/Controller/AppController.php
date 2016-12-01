@@ -4,15 +4,18 @@ namespace SiteBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class SiteController extends Controller
+class AppController extends Controller
 {
-    public function indexAction()
+    public function hygieneAction()
     {
-        return $this->render('SiteBundle:Site:index.html.twig');
+        return $this->render('SiteBundle:vues:hygiene.html.twig');
     }
 	
-	public function nourritureAction(){
-		return $this->render('SiteBundle:vues:nourriture.html.twig');
+	public function santeAction(){
+		return $this->render('SiteBundle:vues:sante.html.twig');
 	}
 
+	public function communicationAction(){
+		return $this->render('SiteBundle:vues:communication.html.twig');
+	}
 }
