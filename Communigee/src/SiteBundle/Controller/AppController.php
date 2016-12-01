@@ -18,4 +18,16 @@ class AppController extends Controller
 	public function communicationAction(){
 		return $this->render('SiteBundle:vues:communication.html.twig');
 	}
+
+	public function communicationInfosHAction(){
+		return $this->render('SiteBundle:vues:communicationInfosH.html.twig');
+	}
+
+	public function alertesHAction(){
+		return $this->render('SiteBundle:vues:alertesH.html.twig');
+	}
+
+	public function evenementsHAction(){
+		return $this->render('SiteBundle:vues:evenementsH.html.twig');
+	}
 }
