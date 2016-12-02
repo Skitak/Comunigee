@@ -1,6 +1,6 @@
 <?php
 
-namespace SiteBundle\Controller;
+namespace SiteBundle\Form;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
