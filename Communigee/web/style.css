@@ -1,0 +1,100 @@
+/*--------------------------------*\
+         Style Communigee
+\*--------------------------------*/
+
+
+
+/*--------------------------------*\
+			 General
+\*--------------------------------*/
+* {				
+	outline: 0;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+@font-face {
+	font-family: 'RalewaySemiBold';
+	src: url('./polices/Raleway/Raleway-SemiBold.ttf'); 
+}
+
+@font-face {
+	font-family: 'RalewayRegular';
+	src: url('./polices/Raleway/Raleway-Regular.ttf'); 
+}
+
+.container-fluid {
+	border: 2px solid blue;
+}
+
+.container {
+	border: 2px solid green;
+}
+
+.row {
+	border: 2px solid purple;
+}
+
+[class*="col-"] {
+  border: 2px solid skyblue;
+}
+
+.vertical-align {
+	display: flex;
+	align-items: center;
+}
+
+/*--------------------------------*\
+				Nav
+\*--------------------------------*/
+
+ul {
+	margin-top: 5%;
+	border: 2px solid yellow;
+}
+
+li {
+	display: inline-block;
+	padding: 0px 5.5%;
+	border: 2px solid green;
+}
+
+li a {
+	color: black;
+	font-size: 1.2em;
+	font-family: 'RalewayRegular';
+}
+
+li:hover a {
+	color: #FF7F3A; /*orange*/
+}
+
+li a:hover {
+	text-decoration: none;
+}
+
+.active a {
+	color: #FF7F3A; /*orange*/
+}
+
+/*--------------------------------*\
+			 Header
+\*--------------------------------*/
+
+header {
+	height: 100px;
+}
+
+img#banderole {
+	width: 200px;
+	height: 200px;
+}
+
+h1 {
+	font-family:'RalewaySemiBold';
+}
+
+p {
+	color: red;
+}
