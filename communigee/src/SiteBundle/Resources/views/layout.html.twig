@@ -5,39 +5,39 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('./style.css') }}" />
 {% endblock %}
 
-{% block body %}
+{% block header %}
 
-	{% block header %}
-
-		<header class="container">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<h1> COMMUNIGEE </h1>
-				</div>
-				
-				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-					<nav>
-						<ul>
-							<li class="active"><a href="accueil.html">Home</a></li>
-							<li><a href="destinations.html">About</a></li>
-							<li><a href="réservation.html">Courses</a></li>
-							<li><a href="rubriques.html">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
+	<header class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+				<h1> COMMUNIGEE </h1>
 			</div>
-		</header>
-	
-	{% endblock %}
-	
-	{% block footer %}
-		<footer class="container-fluid">
-			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<p> mon super footer </p>
-				</div>
+			
+			<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<nav>
+					<ul>
+						<li class="active"><a href="accueil.html">Home</a></li>
+						<li><a href="destinations.html">About</a></li>
+						<li><a href="réservation.html">Courses</a></li>
+						<li><a href="rubriques.html">Contact</a></li>
+					</ul>
+				</nav>
 			</div>
-		</footer>
-	{% endblock %}
+		</div>
+	</header>
 
 {% endblock %}
+
+
+
+{% block footer %}
+	<footer class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p> mon super footer </p>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+
+
