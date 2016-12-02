@@ -16,23 +16,6 @@ class AppController extends Controller
 		}
     }
 	
-	public function santeAction(){
-		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
-			return $this->render('SiteBundle:vues:sante.html.twig');
-		}
-		else{
-			return $this->render('SiteBundle:vues:sante_refugee.html.twig');
-		}
-    	$repository = $this
-			->getDoctrine()
-			->getManager()
-			->getRepository('SiteBundle:Info');
-
-		$listHygiene = $this->findByHygiene(true);
-
-        return $this->render('SiteBundle:vues:hygiene.html.twig', ['listeInfos' => $listHygiene]);
-    }
-	
 	public function santeAction()
 	{
     	$repository = $this
