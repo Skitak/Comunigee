@@ -12,6 +12,7 @@ class SiteController extends Controller
     }
 	
 	public function nourritureAction(){
+<<<<<<< HEAD
     	$repository = $this
 			->getDoctrine()
 			->getManager()
@@ -19,9 +20,18 @@ class SiteController extends Controller
 
 		$listNourriture = $this->findByNourriture(true);
 		return $this->render('SiteBundle:vues:nourriture.html.twig', ['listeInfos' => $listNourriture]);
+=======
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+				return $this->render('SiteBundle:vues:nourriture.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:nourriture_refugee.html.twig');
+		}
+		
+>>>>>>> 99c111372b013aef006f233512fdeebd6346c94e
 	}
-
 	public function foyerAction(){
+<<<<<<< HEAD
     	$repository = $this
 			->getDoctrine()
 			->getManager()
@@ -29,6 +39,14 @@ class SiteController extends Controller
 
 		$listFoyer = $this->findByLit(true);
 		return $this->render('SiteBundle:vues:foyer.html.twig', ['listeInfos' => $listFoyer]);
+=======
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+				return $this->render('SiteBundle:vues:foyer.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:foyer_refugee.html.twig');
+		}
+>>>>>>> 99c111372b013aef006f233512fdeebd6346c94e
 	}
 	
 	public function justiceAction(){
