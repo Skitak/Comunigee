@@ -44,17 +44,39 @@ class AppController extends Controller
 		return $this->render('SiteBundle:vues:communicationInfosH.html.twig', ['form' => $form]);
 	}
 
-	public function alertesHAction(){
+	public function alertesHAction(Request $request){
 		$evt = new Evenement();
-    	$form   = $this->get('form.factory')->create(EvenementType::class, $evt);
-    	
+    	$form = $this->get('form.factory')->create(EvenementType::class, $evt);
+
+    	if($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($evt);
+    		$em->flush();
+    		
+    		$request->getSession()
+        	->getFlashBag()
+        	->add('Alerte', 'L\'alerte a bien été créée');
+
+    		return $this->redirectToRoute('site_homepage');
+    	}
 		return $this->render('SiteBundle:vues:alertesH.html.twig', ['form' => $form]);
 	}
 
-	public function evenementsHAction(){
+	public function evenementsHAction(Request $request){
 		$evt = new Evenement();
-    	$form   = $this->get('form.factory')->create(EvenementType::class, $evt);
+    	$form = $this->get('form.factory')->create(EvenementType::class, $evt);
 
+    	if($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($evt);
+    		$em->flush();
+    	
+    		$request->getSession()
+        	->getFlashBag()
+        	->add('Evènement', 'L\'évènement a bien été créé');
+    		
+    		return $this->redirectToRoute('site_homepage');
+    	}
 		return $this->render('SiteBundle:vues:evenementsH.html.twig', ['form' => $form]);
 	}
 }
