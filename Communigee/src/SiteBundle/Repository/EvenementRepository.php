@@ -10,4 +10,13 @@ namespace SiteBundle\Repository;
  */
 class EvenementRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function dispLastFive()
+	{
+		$em = $this->getDoctrine()->getEntityManager();
+		$query->select('*')
+   			->from('Evenement')
+   			->orderBy('id', 'DESC');
+
+		return $query->setMaxResults(5)->getResult();
+	}
 }
