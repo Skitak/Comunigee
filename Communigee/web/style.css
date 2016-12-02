@@ -5,6 +5,9 @@
 /*--------------------------------*\
 			 General
 \*--------------------------------*/
+html {
+	max-width : 100%;
+}
 * {				
 	outline: 0;
 	margin: 0;
@@ -102,9 +105,6 @@ div.simple img {
 	margin-right: auto;
 }
 
-.pincipal {
-	background-image: url("./images/banderole.jpg");
-}
 
 /*--------------------------------*\
 			 Footer
