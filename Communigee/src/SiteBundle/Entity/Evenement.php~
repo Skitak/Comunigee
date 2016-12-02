@@ -153,28 +153,5 @@ class Evenement
     {
         return $this->dateEvent;
     }
-
-    /**
-     * Set particulier
-     *
-     * @param \UserBundle\Entity\Particulier $particulier
-     *
-     * @return Evenement
-     */
-    public function setParticulier(\UserBundle\Entity\Particulier $particulier = null)
-    {
-        $this->particulier = $particulier;
-
-        return $this;
-    }
-
-    /**
-     * Get particulier
-     *
-     * @return \UserBundle\Entity\Particulier
-     */
-    public function getParticulier()
-    {
-        return $this->particulier;
-    }
 }
+
