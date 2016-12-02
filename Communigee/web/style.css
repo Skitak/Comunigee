@@ -86,9 +86,8 @@ header {
 	height: 100px;
 }
 
-img#banderole {
-	width: 200px;
-	height: 200px;
+.main {
+	width: 40px;
 }
 
 h1 {
