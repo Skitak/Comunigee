@@ -1,0 +1,20 @@
+{% extends "::layout.html.twig" %}
+
+
+{% block body %}
+	<div><img src="#"></div> <!-- ici il y aura la GROSSE image -->
+		<div><img src="#"><div> <!-- ici il y aura le logo -->
+		<div>
+			<!-- BLOCK ASSOCIATION -->
+			<div title="Association">
+				{% for c in centres %}
+					<div>
+						{{c.nomAssoc}}
+						{{c.capacite}}
+						{{c.adressePostale}}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+{% endblock %}
+	
