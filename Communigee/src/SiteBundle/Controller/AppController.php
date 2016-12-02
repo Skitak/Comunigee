@@ -2,6 +2,8 @@
 
 namespace SiteBundle\Controller;
 
+use SiteBundle\Entity\Centre;
+use SiteBundle\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AppController extends Controller
