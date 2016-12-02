@@ -2,6 +2,8 @@
 
 namespace SiteBundle\Controller;
 
+use SiteBundle\Entity\Centre;
+use SiteBundle\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AppController extends Controller
@@ -21,7 +23,7 @@ class AppController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listSante = $this->findBySante(true);
 		return $this->render('SiteBundle:vues:sante.html.twig', ['listeInfos' => $listSante]);
@@ -31,21 +33,52 @@ class AppController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listComm = $this->findByCommunication(true);
 		return $this->render('SiteBundle:vues:communication.html.twig', ['listeInfos' => $listComm]);
 	}
 
 	public function communicationInfosHAction(){
-		return $this->render('SiteBundle:vues:communicationInfosH.html.twig');
+		$centre = new Centre();
+    	$form   = $this->get('form.factory')->create(CentreType::class, $centre);
+
+		return $this->render('SiteBundle:vues:communicationInfosH.html.twig', ['form' => $form]);
 	}
 
-	public function alertesHAction(){
-		return $this->render('SiteBundle:vues:alertesH.html.twig');
+	public function alertesHAction(Request $request){
+		$evt = new Evenement();
+    	$form = $this->get('form.factory')->create(EvenementType::class, $evt);
+
+    	if($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($evt);
+    		$em->flush();
+    		
+    		$request->getSession()
+        	->getFlashBag()
+        	->add('Alerte', 'L\'alerte a bien été créée');
+
+    		return $this->redirectToRoute('site_homepage');
+    	}
+		return $this->render('SiteBundle:vues:alertesH.html.twig', ['form' => $form]);
 	}
 
-	public function evenementsHAction(){
-		return $this->render('SiteBundle:vues:evenementsH.html.twig');
+	public function evenementsHAction(Request $request){
+		$evt = new Evenement();
+    	$form = $this->get('form.factory')->create(EvenementType::class, $evt);
+
+    	if($request->isMethod('POST') && $form->handleRequest($request)->isValid()){
+    		$em = $this->getDoctrine()->getManager();
+    		$em->persist($evt);
+    		$em->flush();
+    	
+    		$request->getSession()
+        	->getFlashBag()
+        	->add('Evènement', 'L\'évènement a bien été créé');
+    		
+    		return $this->redirectToRoute('site_homepage');
+    	}
+		return $this->render('SiteBundle:vues:evenementsH.html.twig', ['form' => $form]);
 	}
 }

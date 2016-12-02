@@ -30,3 +30,18 @@ app_communication:
     path:     /Communication
     defaults:
         _controller: SiteBundle:App:communication
+        
+app_alertes_H:
+    path:     /alertes/H
+    defaults:
+        _controller: SiteBundle:App:alertesH
+        
+app_communication_info_H:
+    path:     /Communication/H
+    defaults:
+        _controller: SiteBundle:App:communicationInfosH
+        
+app_evenement_H:
+    path:     /Evenement/H
+    defaults:
+        _controller: SiteBundle:App:evenementsH
