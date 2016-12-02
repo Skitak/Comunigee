@@ -8,11 +8,21 @@ class AppController extends Controller
 {
     public function hygieneAction()
     {
-        return $this->render('SiteBundle:vues:hygiene.html.twig');
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+				return $this->render('SiteBundle:vues:hygiene.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:hygiene_refugee.html.twig');
+		}
     }
 	
 	public function santeAction(){
-		return $this->render('SiteBundle:vues:sante.html.twig');
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+			return $this->render('SiteBundle:vues:sante.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:sante_refugee.html.twig');
+		}
 	}
 
 	public function communicationAction(){
