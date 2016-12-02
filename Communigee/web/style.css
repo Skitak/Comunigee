@@ -2,8 +2,6 @@
          Style Communigee
 \*--------------------------------*/
 
-
-
 /*--------------------------------*\
 			 General
 \*--------------------------------*/
@@ -24,21 +22,6 @@
 	src: url('./polices/Raleway/Raleway-Regular.ttf'); 
 }
 
-.container-fluid {
-	border: 2px solid blue;
-}
-
-.container {
-	border: 2px solid green;
-}
-
-.row {
-	border: 2px solid purple;
-}
-
-[class*="col-"] {
-  border: 2px solid skyblue;
-}
 
 .vertical-align {
 	display: flex;
@@ -51,13 +34,11 @@
 
 ul {
 	margin-top: 5%;
-	border: 2px solid yellow;
 }
 
 li {
 	display: inline-block;
 	padding: 0px 5.5%;
-	border: 2px solid green;
 }
 
 li a {
@@ -119,6 +100,10 @@ div.simple img {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.pincipal {
+	background-image: url("./images/banderole.jpg");
 }
 
 /*--------------------------------*\
