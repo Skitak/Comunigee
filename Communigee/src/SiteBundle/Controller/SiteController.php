@@ -15,7 +15,7 @@ class SiteController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listNourriture = $this->findByNourriture(true);
 		return $this->render('SiteBundle:vues:nourriture.html.twig', ['listeInfos' => $listNourriture]);
@@ -31,7 +31,7 @@ class SiteController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listFoyer = $this->findByLit(true);
 		return $this->render('SiteBundle:vues:foyer.html.twig', ['listeInfos' => $listFoyer]);
@@ -47,7 +47,7 @@ class SiteController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listJustice = $this->findByJustice(true);
 		return $this->render('SiteBundle:vues:justice.html.twig', ['listeInfos' => $listJustice]);
@@ -57,7 +57,7 @@ class SiteController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listAlerte = $this->findByAlerte(true);
 		return $this->render('SiteBundle:vues:alertes.html.twig', ['listeInfos' => $listAlerte]);
