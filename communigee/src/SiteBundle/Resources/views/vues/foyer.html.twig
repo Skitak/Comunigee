@@ -12,6 +12,13 @@
 						{{c.nomAssoc}}
 						{{c.capacite}}
 						{{c.adressePostale}}
+						{{c.horaireOuv}}
+						{{c.horaireFerm}}
+						{{c.jourOuv}}
+						{{c.hygiene}}
+						{{c.nourriture}}
+						{{c.lit}}
+						{{c.sante}}
 					</div>
 				{% endfor %}
 			</div>
@@ -21,8 +28,14 @@
 				{% for p in particuliers %}
 					<div>
 						{{p.nomParticulier}} {{p.prenomParticulier}}
+						{{p.mail}}
+						{{p.tel}}
 						{{p.capacite}}
 						{{p.adressePostale}}
+						{{c.hygiene}}
+						{{c.nourriture}}
+						{{c.lit}}
+						{{c.sante}}
 					</div>
 				{% endfor %}
 			</div>

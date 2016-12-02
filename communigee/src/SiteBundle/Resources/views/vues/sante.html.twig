@@ -15,6 +15,23 @@
 					</div>
 				{% endfor %}
 			</div>
+			
+			<h3>Particulier</h3>
+			<div src="Particulier">
+				{% for p in particuliers %}
+					<div>
+						{{p.nomParticulier}} {{p.prenomParticulier}}
+						{{p.mail}}
+						{{p.tel}}
+						{{p.capacite}}
+						{{p.adressePostale}}
+						{{c.hygiene}}
+						{{c.nourriture}}
+						{{c.lit}}
+						{{c.sante}}
+					</div>
+				{% endfor %}
+			</div>
 		</div>
 {% endblock %}
 	
