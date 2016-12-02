@@ -12,11 +12,21 @@ class SiteController extends Controller
     }
 	
 	public function nourritureAction(){
-		return $this->render('SiteBundle:vues:nourriture.html.twig');
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+				return $this->render('SiteBundle:vues:nourriture.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:nourriture_refugee.html.twig');
+		}
+		
 	}
-
 	public function foyerAction(){
-		return $this->render('SiteBundle:vues:foyer.html.twig');
+		if($this->get('security.authorization_checker')->isGranted('ROLE_AH')){
+				return $this->render('SiteBundle:vues:foyer.html.twig');
+		}
+		else{
+			return $this->render('SiteBundle:vues:foyer_refugee.html.twig');
+		}
 	}
 	
 	public function justiceAction(){
