@@ -13,9 +13,9 @@ class AppController extends Controller
 			->getManager()
 			->getRepository('SiteBundle:Info');
 
-		$listHygiene = $this->findByType('hygiene');
+		$listHygiene = $this->findByHygiene(true);
 
-        return $this->render('SiteBundle:vues:hygiene.html.twig', array('listeInfos' => $listHygiene));
+        return $this->render('SiteBundle:vues:hygiene.html.twig', ['listeInfos' => $listHygiene]);
     }
 	
 	public function santeAction()
@@ -25,8 +25,8 @@ class AppController extends Controller
 			->getManager()
 			->getRepository('SiteBundle:Info');
 
-		$listSante = $this->findByType('sante');
-		return $this->render('SiteBundle:vues:sante.html.twig', array('listeInfos' => $listSante));
+		$listSante = $this->findBySante(true);
+		return $this->render('SiteBundle:vues:sante.html.twig', ['listeInfos' => $listSante]);
 	}
 
 	public function communicationAction(){
@@ -35,8 +35,8 @@ class AppController extends Controller
 			->getManager()
 			->getRepository('SiteBundle:Info');
 
-		$listComm = $this->findByType('communication');
-		return $this->render('SiteBundle:vues:communication.html.twig', array('listeInfos' => $listComm));
+		$listComm = $this->findByCommunication(true);
+		return $this->render('SiteBundle:vues:communication.html.twig', ['listeInfos' => $listComm]);
 	}
 
 	public function communicationInfosHAction(){

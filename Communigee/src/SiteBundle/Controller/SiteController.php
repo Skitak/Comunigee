@@ -12,19 +12,44 @@ class SiteController extends Controller
     }
 	
 	public function nourritureAction(){
-		return $this->render('SiteBundle:vues:nourriture.html.twig');
+    	$repository = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('SiteBundle:Info');
+
+		$listNourriture = $this->findByNourriture(true);
+		return $this->render('SiteBundle:vues:nourriture.html.twig', ['listeInfos' => $listNourriture]);
 	}
 
 	public function foyerAction(){
-		return $this->render('SiteBundle:vues:foyer.html.twig');
+    	$repository = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('SiteBundle:Info');
+
+		$listFoyer = $this->findByLit(true);
+		return $this->render('SiteBundle:vues:foyer.html.twig', ['listeInfos' => $listFoyer]);
 	}
 	
 	public function justiceAction(){
-		return $this->render('SiteBundle:vues:justice.html.twig');
+    	$repository = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('SiteBundle:Info');
+
+		$listJustice = $this->findByJustice(true);
+		return $this->render('SiteBundle:vues:justice.html.twig', ['listeInfos' => $listJustice]);
 	}
 	
 	public function alertesAction(){
-		return $this->render('SiteBundle:vues:alertes.html.twig');
+    	$repository = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('SiteBundle:Info');
+
+		$listAlerte = $this->findByAlerte(true);
+		return $this->render('SiteBundle:vues:alertes.html.twig', ['listeInfos' => $listAlerte]);
 	}
 	
 }
+ 
