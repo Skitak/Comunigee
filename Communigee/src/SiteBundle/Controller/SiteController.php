@@ -12,7 +12,7 @@ class SiteController extends Controller
 			->getDoctrine()
 			->getManager()
 			->getRepository('SiteBundle:Evenement');
-		$listEvent = $this->findAll();
+		$listEvent = $repository->findAll();
         return $this->render('SiteBundle:vues:index.html.twig', array('events' => $listEvent));
     }
 	
