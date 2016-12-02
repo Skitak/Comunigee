@@ -1,3 +1,32 @@
 site_homepage:
     path:     /
     defaults: { _controller: SiteBundle:Site:index }
+
+site_nourriture:
+    path:     /Nourriture
+    defaults:
+        _controller: SiteBundle:Site:nourriture
+site_foyer:
+    path:     /Foyer
+    defaults:
+        _controller: SiteBundle:Site:foyer
+site_justice:
+    path:     /Justice
+    defaults:
+        _controller: SiteBundle:Site:justice
+site_alertes:
+    path:     /Alertes
+    defaults:
+        _controller: SiteBundle:Site:alertes
+app_hygiene:
+    path:     /Hygiene
+    defaults:
+        _controller: SiteBundle:App:hygiene
+app_sante:
+    path:     /Sante
+    defaults:
+        _controller: SiteBundle:App:sante
+app_communication:
+    path:     /Communication
+    defaults:
+        _controller: SiteBundle:App:communication
