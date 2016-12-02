@@ -21,7 +21,7 @@ class AppController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listSante = $this->findBySante(true);
 		return $this->render('SiteBundle:vues:sante.html.twig', ['listeInfos' => $listSante]);
@@ -31,21 +31,30 @@ class AppController extends Controller
     	$repository = $this
 			->getDoctrine()
 			->getManager()
-			->getRepository('SiteBundle:Info');
+			->getRepository('SiteBundle:Centre');
 
 		$listComm = $this->findByCommunication(true);
 		return $this->render('SiteBundle:vues:communication.html.twig', ['listeInfos' => $listComm]);
 	}
 
 	public function communicationInfosHAction(){
-		return $this->render('SiteBundle:vues:communicationInfosH.html.twig');
+		$centre = new Centre();
+    	$form   = $this->get('form.factory')->create(CentreType::class, $centre);
+
+		return $this->render('SiteBundle:vues:communicationInfosH.html.twig', ['form' => $form]);
 	}
 
 	public function alertesHAction(){
-		return $this->render('SiteBundle:vues:alertesH.html.twig');
+		$evt = new Evenement();
+    	$form   = $this->get('form.factory')->create(EvenementType::class, $evt);
+    	
+		return $this->render('SiteBundle:vues:alertesH.html.twig', ['form' => $form]);
 	}
 
 	public function evenementsHAction(){
-		return $this->render('SiteBundle:vues:evenementsH.html.twig');
+		$evt = new Evenement();
+    	$form   = $this->get('form.factory')->create(EvenementType::class, $evt);
+
+		return $this->render('SiteBundle:vues:evenementsH.html.twig', ['form' => $form]);
 	}
 }
