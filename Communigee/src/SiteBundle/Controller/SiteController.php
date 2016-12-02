@@ -8,7 +8,12 @@ class SiteController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('SiteBundle:vues:index.html.twig');
+		$repository = $this
+			->getDoctrine()
+			->getManager()
+			->getRepository('SiteBundle:Evenement');
+		$listEvent = $this->findAll();
+        return $this->render('SiteBundle:vues:index.html.twig', array('events' => $listEvent));
     }
 	
 	public function nourritureAction(){
