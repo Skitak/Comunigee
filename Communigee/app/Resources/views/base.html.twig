@@ -5,11 +5,15 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		<link rel="stylesheet" type="text/css" href="{{ asset('style.css') }}" />
-		<link rel="stylesheet" href="{{ asset('./bootstrap/css/bootstrap.min.css') }}">
+		
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+			{% block header %}{% endblock %}
+			
+			{% block footer %}{% endblock %}
+		{% endblock %}
+		
         {% block javascripts %}{% endblock %}
     </body>
 </html>
